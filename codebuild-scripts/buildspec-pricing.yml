@@ -5,7 +5,7 @@ phases:
     commands:
       - echo "=== Phase Pre-build - Transform Pricing MCP Server and ECR Login ==="
       - chmod +x transform-pricing.sh
-      - ./transform-pricing.sh
+      - bash /transform-pricing.sh
       - echo "Logging in to Amazon ECR..."
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
 
